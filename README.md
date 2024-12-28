@@ -107,15 +107,23 @@ ENTRYPOINT /app/run.sh
 
 Este Dockerfile crea una imagen basada en busybox que ejecuta un script en un bucle infinito para mostrar la hora actual en tiempo real.
 
-📀 *1. Base de la imagen:* Utiliza busybox:latest, una imagen minimalista de Unix.
+📀 *1. Base de la imagen:* 
 
-📀 *2. Copia el script:* Copia un script llamado run.sh al contenedor, que:
+Utiliza busybox:latest, una imagen minimalista de Unix.
+
+📀 *2. Copia el script:* 
+
+Copia un script llamado run.sh al contenedor, que:
 
 Imprime la hora actual en formato HH:MM:SS cada segundo, sobrescribiendo la línea anterior.
 
-📀 *3. Permisos:* El script recibe permisos de ejecución (chmod=755).
+📀 *3. Permisos:* 
 
-📀 *4. Punto de entrada:* Configura el script run.sh como el punto de entrada del contenedor, lo que significa que se ejecutará automáticamente cuando se inicie el contenedor.
+El script recibe permisos de ejecución (chmod=755).
+
+📀 *4. Punto de entrada:* 
+
+Configura el script run.sh como el punto de entrada del contenedor, lo que significa que se ejecutará automáticamente cuando se inicie el contenedor.
 
 Función:
 
@@ -192,13 +200,21 @@ Se ejecuta en un entorno Ubuntu (ubuntu-latest).
 
 📀 *4. Pasos del Job:*
 
-✨️ Checkout repository: Clona el repositorio en el entorno de GitHub Actions.
+✨️ Checkout repository: 
 
-✨️ Log in to the Container registry: Inicia sesión en el registro de contenedores de GitHub (GitHub Container Registry) utilizando las credenciales almacenadas en el GITHUB_TOKEN.
+Clona el repositorio en el entorno de GitHub Actions.
 
-✨️ Extract metadata: Utiliza la acción docker/metadata-action para extraer las etiquetas y etiquetas adicionales para la imagen Docker.
+✨️ Log in to the Container registry:
 
-✨️ Build and push Docker image: Utiliza la acción docker/build-push-action para construir la imagen Docker con el Dockerfile del repositorio y subirla al registro de contenedores de GitHub. Las etiquetas y las etiquetas adicionales se aplican a la imagen.
+Inicia sesión en el registro de contenedores de GitHub (GitHub Container Registry) utilizando las credenciales almacenadas en el GITHUB_TOKEN.
+
+✨️ Extract metadata: 
+
+Utiliza la acción docker/metadata-action para extraer las etiquetas y etiquetas adicionales para la imagen Docker.
+
+✨️ Build and push Docker image: 
+
+Utiliza la acción docker/build-push-action para construir la imagen Docker con el Dockerfile del repositorio y subirla al registro de contenedores de GitHub. Las etiquetas y las etiquetas adicionales se aplican a la imagen.
 
 Propósito:
 
