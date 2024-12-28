@@ -79,15 +79,15 @@ ENTRYPOINT /app/run.sh
 
 Este Dockerfile crea una imagen basada en busybox que ejecuta un script en un bucle infinito para mostrar la hora actual en tiempo real.
 
-📀 1. Base de la imagen: Utiliza busybox:latest, una imagen minimalista de Unix.
+📀 *1. Base de la imagen:* Utiliza busybox:latest, una imagen minimalista de Unix.
 
-📀 2. Copia el script: Copia un script llamado run.sh al contenedor, que:
+📀 *2. Copia el script:* Copia un script llamado run.sh al contenedor, que:
 
 Imprime la hora actual en formato HH:MM:SS cada segundo, sobrescribiendo la línea anterior.
 
-📀 3. Permisos: El script recibe permisos de ejecución (chmod=755).
+📀 *3. Permisos:* El script recibe permisos de ejecución (chmod=755).
 
-📀 4. Punto de entrada: Configura el script run.sh como el punto de entrada del contenedor, lo que significa que se ejecutará automáticamente cuando se inicie el contenedor.
+📀 *4. Punto de entrada:* Configura el script run.sh como el punto de entrada del contenedor, lo que significa que se ejecutará automáticamente cuando se inicie el contenedor.
 
 Función:
 
@@ -146,11 +146,11 @@ jobs:
 ```
 Este archivo main.yml define un flujo de trabajo de GitHub Actions para crear y publicar una imagen Docker en un registro de contenedores (GitHub Container Registry) cada vez que se hace un push a la rama main.
 
-📀 1. Trigger (Disparador):
+📀 *1. Trigger (Disparador):*
 
 Se ejecuta automáticamente cuando hay un push a la rama main.
 
-📀 2. Variables de entorno:
+📀 *2. Variables de entorno:*
 
 Define dos variables:
 
@@ -158,11 +158,11 @@ REGISTRY: Dominio del registro de contenedores (ghcr.io).
 
 IMAGE_NAME: Nombre de la imagen Docker basada en el repositorio de GitHub.
 
-📀 3. Job (build-and-push-image):
+📀 *3. Job (build-and-push-image):*
 
 Se ejecuta en un entorno Ubuntu (ubuntu-latest).
 
-📀 4. Pasos del Job:
+📀 *4. Pasos del Job:*
 
 ✨️ Checkout repository: Clona el repositorio en el entorno de GitHub Actions.
 
