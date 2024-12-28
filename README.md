@@ -73,8 +73,6 @@ ENTRYPOINT /app/run.sh
 
 Este Dockerfile crea una imagen basada en busybox que ejecuta un script en un bucle infinito para mostrar la hora actual en tiempo real.
 
-Resumen de lo que hace:
-
 1. Base de la imagen: Utiliza busybox:latest, una imagen minimalista de Unix.
 
 2. Copia el script: Copia un script llamado run.sh al contenedor, que:
@@ -140,6 +138,37 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 ```
+Este archivo main.yml define un flujo de trabajo de GitHub Actions para crear y publicar una imagen Docker en un registro de contenedores (GitHub Container Registry) cada vez que se hace un push a la rama main.
+
+1. Trigger (Disparador):
+
+Se ejecuta automáticamente cuando hay un push a la rama main.
+
+2. Variables de entorno:
+
+Define dos variables:
+
+REGISTRY: Dominio del registro de contenedores (ghcr.io).
+
+IMAGE_NAME: Nombre de la imagen Docker basada en el repositorio de GitHub.
+
+3. Job (build-and-push-image):
+
+Se ejecuta en un entorno Ubuntu (ubuntu-latest).
+
+4. Pasos del Job:
+
+Checkout repository: Clona el repositorio en el entorno de GitHub Actions.
+
+Log in to the Container registry: Inicia sesión en el registro de contenedores de GitHub (GitHub Container Registry) utilizando las credenciales almacenadas en el GITHUB_TOKEN.
+
+Extract metadata: Utiliza la acción docker/metadata-action para extraer las etiquetas y etiquetas adicionales para la imagen Docker.
+
+Build and push Docker image: Utiliza la acción docker/build-push-action para construir la imagen Docker con el Dockerfile del repositorio y subirla al registro de contenedores de GitHub. Las etiquetas y las etiquetas adicionales se aplican a la imagen.
+
+Propósito:
+
+Automatizar la construcción y publicación de una imagen Docker en GitHub Container Registry cuando se actualiza la rama main, usando el archivo Dockerfile del repositorio.
 
 🟦 Estado del Proyecto
 
