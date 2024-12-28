@@ -200,19 +200,19 @@ Se ejecuta en un entorno Ubuntu (ubuntu-latest).
 
 📀 *4. Pasos del Job:*
 
-✨️ Checkout repository: 
+✨️ *Checkout repository:*
 
 Clona el repositorio en el entorno de GitHub Actions.
 
-✨️ Log in to the Container registry:
+✨️ *Log in to the Container registry:*
 
 Inicia sesión en el registro de contenedores de GitHub (GitHub Container Registry) utilizando las credenciales almacenadas en el GITHUB_TOKEN.
 
-✨️ Extract metadata: 
+✨️ *Extract metadata:*
 
 Utiliza la acción docker/metadata-action para extraer las etiquetas y etiquetas adicionales para la imagen Docker.
 
-✨️ Build and push Docker image: 
+✨️ *Build and push Docker image:*
 
 Utiliza la acción docker/build-push-action para construir la imagen Docker con el Dockerfile del repositorio y subirla al registro de contenedores de GitHub. Las etiquetas y las etiquetas adicionales se aplican a la imagen.
 
