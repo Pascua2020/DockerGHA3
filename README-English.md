@@ -177,7 +177,7 @@ ENTRYPOINT /app/run.sh
 
 This Dockerfile creates a lightweight container image using the busybox:latest base image.
 
-Steps:
+🔷️Steps:
 
 1. Specify Base Image:
 
@@ -205,7 +205,7 @@ Pauses for 1 second between updates (sleep 1).
 
 The container is configured to execute /app/run.sh automatically when it starts.
 
-Purpose:
+🔷️Purpose:
 
 This Dockerfile creates a container that continuously displays the current time in real-time. It demonstrates how to create a minimal, self-contained application using a simple base image like busybox.
 
@@ -265,15 +265,15 @@ This main.yml file defines a GitHub Actions workflow that builds and publishes a
 
 Workflow Overview:
 
-1. Name:
+🔷️1. Name:
 
 The workflow is titled Create and publish a Docker image.
 
-2. Trigger:
+🔷️2. Trigger:
 
 The workflow runs whenever there is a push event to the main branch.
 
-3. Environment Variables:
+🔷️3. Environment Variables:
 
 REGISTRY: Specifies the container registry domain (ghcr.io for GitHub Container Registry).
 
@@ -293,7 +293,7 @@ Permissions:
 
 Grants read access to the repository content and write access to the package registry using the GITHUB_TOKEN.
 
-Steps:
+🔷️Steps:
 
 1. Checkout Repository:
 
