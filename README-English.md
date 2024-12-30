@@ -261,6 +261,74 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 ```
 
+This main.yml file defines a GitHub Actions workflow that builds and publishes a Docker image to a container registry (GitHub Container Registry).
+
+Workflow Overview:
+
+1. Name:
+
+The workflow is titled Create and publish a Docker image.
+
+2. Trigger:
+
+The workflow runs whenever there is a push event to the main branch.
+
+3. Environment Variables:
+
+REGISTRY: Specifies the container registry domain (ghcr.io for GitHub Container Registry).
+
+IMAGE_NAME: Dynamically assigns the Docker image name based on the repository name (${{ github.repository }}).
+
+Job Details:
+
+Job Name:
+
+build-and-push-image.
+
+Runs On:
+
+Executes on the latest version of Ubuntu (ubuntu-latest).
+
+Permissions:
+
+Grants read access to the repository content and write access to the package registry using the GITHUB_TOKEN.
+
+Steps:
+
+1. Checkout Repository:
+
+Uses the actions/checkout action to fetch the repository files into the workflow environment.
+
+2. Log In to the Container Registry:
+
+Uses docker/login-action to authenticate with the container registry (ghcr.io) using:
+
+username: The GitHub actor performing the action.
+
+password: The GITHUB_TOKEN secret, which allows access to the registry.
+
+3. Extract Metadata:
+
+Utilizes docker/metadata-action to generate metadata for the Docker image, including tags and labels.
+
+The id: meta allows the output of this step (tags and labels) to be reused in later steps.
+
+The images input defines the base name for the Docker image.
+
+4. Build and Push Docker Image:
+
+Uses docker/build-push-action to:
+
+Build the Docker image using the Dockerfile in the repository.
+
+Tag the image with metadata from the meta step.
+
+Push the built image to the GitHub Container Registry (ghcr.io).
+
+Purpose:
+
+This workflow automates the process of creating and publishing a Docker image whenever changes are pushed to the main branch. The published image is uploaded to GitHub Packages, where it can be accessed by other users or workflows.
+
 ## 5️⃣🟦 Project Status
 
 ```
