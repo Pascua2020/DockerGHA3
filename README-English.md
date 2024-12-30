@@ -179,11 +179,11 @@ This Dockerfile creates a lightweight container image using the busybox:latest b
 
 🔷️ Steps:
 
-1. Specify Base Image:
+▫️ 1. Specify Base Image:
 
 The image is built using the busybox:latest image, which is a minimal Linux distribution optimized for small size and basic functionality.
 
-2. Create and Copy a Shell Script:
+▫️ 2. Create and Copy a Shell Script:
 
 A shell script is written inline directly into the Dockerfile using a heredoc syntax (<<EOF).
 
@@ -191,7 +191,7 @@ The script (run.sh) is copied into the /app directory inside the container.
 
 The script is given executable permissions (chmod=755).
 
-3. Shell Script Functionality:
+▫️ 3. Shell Script Functionality:
 
 The script continuously:
 
@@ -201,7 +201,7 @@ Overwrites the previous output (\r ensures the same line is updated).
 
 Pauses for 1 second between updates (sleep 1).
 
-4. Set the Entrypoint:
+▫️ 4. Set the Entrypoint:
 
 The container is configured to execute /app/run.sh automatically when it starts.
 
@@ -295,11 +295,11 @@ Grants read access to the repository content and write access to the package reg
 
 🔷️ Steps:
 
-1. Checkout Repository:
+▫️ 1. Checkout Repository:
 
 Uses the actions/checkout action to fetch the repository files into the workflow environment.
 
-2. Log In to the Container Registry:
+▫️ 2. Log In to the Container Registry:
 
 Uses docker/login-action to authenticate with the container registry (ghcr.io) using:
 
@@ -307,7 +307,7 @@ username: The GitHub actor performing the action.
 
 password: The GITHUB_TOKEN secret, which allows access to the registry.
 
-3. Extract Metadata:
+▫️ 3. Extract Metadata:
 
 Utilizes docker/metadata-action to generate metadata for the Docker image, including tags and labels.
 
@@ -315,7 +315,7 @@ The id: meta allows the output of this step (tags and labels) to be reused in la
 
 The images input defines the base name for the Docker image.
 
-4. Build and Push Docker Image:
+▫️ 4. Build and Push Docker Image:
 
 Uses docker/build-push-action to:
 
