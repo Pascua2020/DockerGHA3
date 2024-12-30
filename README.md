@@ -26,25 +26,25 @@
 
 ## 1️⃣🟥 **Características**
 
-#### ⚡️ *Docker:* 
+#### ⚡️ *Docker :* 
 
 ![Docker Logo](https://dwglogo.com/wp-content/uploads/2017/09/Docker_container_engine_logo.png)
 
 Empaqueta la aplicación Spring Boot en un contenedor para garantizar que se ejecute de la misma manera en cualquier entorno.
 
-#### ⚡️ *GitHub Actions:* 
+#### ⚡️ *GitHub Actions :* 
 
 ![GHA Logo](https://miro.medium.com/v2/resize:fit:1075/0*w5Fsp29pbWIUpW7Q.png)
 
 Automatiza el proceso de construcción, prueba y despliegue de la aplicación con cada cambio en el repositorio.
 
-#### ⚡️ *Java Spring Boot:* 
+#### ⚡️ *Java Spring Boot :* 
 
 ![Java SB Logo](https://miro.medium.com/v2/resize:fit:720/format:webp/1*MvUFlFTbiU40ae1SK69-Jg.png)
 
 Framework backend para el desarrollo de la aplicación web.
 
-#### ⚡️ *Dokku:* 
+#### ⚡️ *Dokku :* 
 
 ![Dokku Logo](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj6mNvZ4G3tFQpY1qcVDQdWGSVUW5ljKhyUxfgTeFAZUX5r48Xm8M6mMf55h3IkCw1DC3ERygHIWgsvguq1cYntoluBXdW4-7W_Uhw8JHrvQIeW5T1lIGOuk7WTvkP5O-M_XR4J-6W9Gg-vfhG6B-Q6w75EaJ_eHlGvjxcbEGB3_xckw6OnTwxuBWsL-TRQ/s2800/A%20Deep%20Dive%20with%20Dokku.webp)
 
@@ -52,7 +52,7 @@ Plataforma de despliegue similar a Heroku que usa contenedores Docker para gesti
 
 **Diferencias entre DockerGHA 3 con 1 , 2 y 4 :**
 
-#### ⚙️ *Todos los Dockerfiles son idénticos:*
+#### ⚙️ *Todos los Dockerfiles son idénticos :*
 
 - Usan la imagen base busybox:latest.
 
@@ -62,7 +62,7 @@ Plataforma de despliegue similar a Heroku que usa contenedores Docker para gesti
 
 #### ⚙️ *Main.yml - Diferencias generales*:
 
-*🔷️ 1. Repositorios:*
+*🔷️ 1. Repositorios :*
 
 - 1 y 2 suben imágenes solo a Docker Hub.
 
@@ -70,11 +70,11 @@ Plataforma de despliegue similar a Heroku que usa contenedores Docker para gesti
 
 - 4 sube a ambos registries (Docker Hub y GHCR).
 
-*🔷️ 2. Automatización:*
+*🔷️ 2. Automatización :*
 
 - Repositorios 2, 3 y 4 usan docker/metadata-action para etiquetas automáticas, mientras que el 1 no.
 
-*🔷️ 3. Nombres de imagen:*
+*🔷️ 3. Nombres de imagen :*
 
 - Repositorio 1 tiene un nombre fijo: clockbox:latest.
 
@@ -100,23 +100,23 @@ DockerGHA3/
 ├── pom.xml                       # Archivo de configuración de Maven (si usas Maven)
 └── .gitignore                    # Archivos y directorios que Git debe ignorar
 ```
-#### 💾 *Dockerfile:* 
+#### 💾 *Dockerfile :* 
 
 Archivo que define cómo crear la imagen Docker para el proyecto Spring Boot.
 
-#### 💾 *main.yml:* 
+#### 💾 *main.yml :* 
 
 Archivo de configuración para GitHub Actions que automatiza la construcción, pruebas y despliegue.
 
-#### 💾 *src/:* 
+#### 💾 *src/ :* 
 
 Contiene el código fuente de la aplicación Spring Boot.
 
-#### 💾 *pom.xml:*
+#### 💾 *pom.xml :*
 
 Archivo de configuración de Maven para las dependencias y construcción del proyecto.
 
-#### 💾 *dokku-deploy.sh:* 
+#### 💾 *dokku-deploy.sh :* 
 
 Script que automatiza el proceso de despliegue de la aplicación en un servidor remoto usando Dokku.
 
@@ -124,19 +124,19 @@ Script que automatiza el proceso de despliegue de la aplicación en un servidor 
 
  🖱 *Requisitos*
 
-ℹ️ *Docker:* 
+ℹ️ *Docker :* 
 
 Necesario para construir y ejecutar la aplicación en contenedores.
 
-ℹ️ *GitHub Actions:* 
+ℹ️ *GitHub Actions :* 
 
 Se utiliza para la integración continua y automatización de procesos de despliegue.
 
-ℹ️ *Dokku:* 
+ℹ️ *Dokku :* 
 
 Necesitas un servidor remoto con Dokku instalado para gestionar el despliegue.
 
-ℹ️ *Java:* 
+ℹ️ *Java :* 
 
 Debes tener instalado Java y Maven para desarrollar la aplicación de backend con Spring Boot.
 
@@ -159,25 +159,25 @@ ENTRYPOINT /app/run.sh
 
 Este Dockerfile crea una imagen basada en busybox que ejecuta un script en un bucle infinito para mostrar la hora actual en tiempo real.
 
-📀 *1. Base de la imagen:* 
+📀 *1. Base de la imagen :* 
 
 Utiliza busybox:latest, una imagen minimalista de Unix.
 
-📀 *2. Copia el script:* 
+📀 *2. Copia el script :* 
 
 Copia un script llamado run.sh al contenedor, que:
 
 Imprime la hora actual en formato HH:MM:SS cada segundo, sobrescribiendo la línea anterior.
 
-📀 *3. Permisos:* 
+📀 *3. Permisos :* 
 
 El script recibe permisos de ejecución (chmod=755).
 
-📀 *4. Punto de entrada:* 
+📀 *4. Punto de entrada :* 
 
 Configura el script run.sh como el punto de entrada del contenedor, lo que significa que se ejecutará automáticamente cuando se inicie el contenedor.
 
-🔑 Función:
+🔑 Función :
 
 El contenedor muestra la hora actual en tiempo real, actualizándola cada segundo en la misma línea de la terminal.
 
@@ -234,11 +234,11 @@ jobs:
 ```
 Este archivo main.yml define un flujo de trabajo de GitHub Actions para crear y publicar una imagen Docker en un registro de contenedores (GitHub Container Registry) cada vez que se hace un push a la rama main.
 
-📀 *1. Trigger (Disparador):*
+📀 *1. Trigger (Disparador) :*
 
 Se ejecuta automáticamente cuando hay un push a la rama main.
 
-📀 *2. Variables de entorno:*
+📀 *2. Variables de entorno :*
 
 Define dos variables:
 
@@ -246,29 +246,29 @@ REGISTRY: Dominio del registro de contenedores (ghcr.io).
 
 IMAGE_NAME: Nombre de la imagen Docker basada en el repositorio de GitHub.
 
-📀 *3. Job (build-and-push-image):*
+📀 *3. Job (build-and-push-image) :*
 
 Se ejecuta en un entorno Ubuntu (ubuntu-latest).
 
-📀 *4. Pasos del Job:*
+📀 *4. Pasos del Job :*
 
-✨️ *Checkout repository:*
+✨️ *Checkout repository :*
 
 Clona el repositorio en el entorno de GitHub Actions.
 
-✨️ *Log in to the Container registry:*
+✨️ *Log in to the Container registry :*
 
 Inicia sesión en el registro de contenedores de GitHub (GitHub Container Registry) utilizando las credenciales almacenadas en el GITHUB_TOKEN.
 
-✨️ *Extract metadata:*
+✨️ *Extract metadata :*
 
 Utiliza la acción docker/metadata-action para extraer las etiquetas y etiquetas adicionales para la imagen Docker.
 
-✨️ *Build and push Docker image:*
+✨️ *Build and push Docker image :*
 
 Utiliza la acción docker/build-push-action para construir la imagen Docker con el Dockerfile del repositorio y subirla al registro de contenedores de GitHub. Las etiquetas y las etiquetas adicionales se aplican a la imagen.
 
-🔑 Propósito:
+🔑 Propósito :
 
 Automatizar la construcción y publicación de una imagen Docker en GitHub Container Registry cuando se actualiza la rama main, usando el archivo Dockerfile del repositorio.
 
@@ -290,15 +290,15 @@ Este proyecto no tiene licencia asignada. Al no contar con una licencia explíci
 - Pascua2020 (https://github.com/Pascua2020)
 - UTN
 
-## 9️⃣📒**Documentación Oficial:**
+## 9️⃣📒**Documentación Oficial :**
 
-*Docker:*
+*Docker :*
 https://docs.docker.com
 
-*Github Actions:*
+*Github Actions :*
 https://docs.github.com/es/actions
 
-*Dokku:*
+*Dokku :*
 https://dokku.com/docs/getting-started/installation/
 
 ## 🔟🔄 **Notas**
