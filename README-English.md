@@ -160,7 +160,7 @@ Automate deployment processes via Dokku.
 
 ## ⬜️ Code
 
-💡 *Dockerfile*
+#### 💡 *Dockerfile*
 ```
 # syntax=docker/dockerfile:1
 FROM busybox:latest
@@ -209,7 +209,7 @@ The container is configured to execute /app/run.sh automatically when it starts.
 
 This Dockerfile creates a container that continuously displays the current time in real-time. It demonstrates how to create a minimal, self-contained application using a simple base image like busybox.
 
-💡 *Main.yml*
+#### 💡 *Main.yml*
 ```
 #
 name: Create and publish a Docker image
