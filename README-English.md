@@ -273,7 +273,7 @@ jobs:
 
 This main.yml file defines a GitHub Actions workflow that builds and publishes a Docker image to a container registry (GitHub Container Registry).
 
-Workflow Overview :
+*Workflow Overview :*
 
 *🔷️ 1. Name :*
 
@@ -289,7 +289,7 @@ REGISTRY: Specifies the container registry domain (ghcr.io for GitHub Container 
 
 IMAGE_NAME: Dynamically assigns the Docker image name based on the repository name (${{ github.repository }}).
 
-Job Details:
+*🔷️ Job Details:*
 
 Job Name:
 
