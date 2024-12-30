@@ -175,6 +175,40 @@ EOF
 ENTRYPOINT /app/run.sh
 ```
 
+This Dockerfile creates a lightweight container image using the busybox:latest base image.
+
+Steps:
+
+1. Specify Base Image:
+
+The image is built using the busybox:latest image, which is a minimal Linux distribution optimized for small size and basic functionality.
+
+2. Create and Copy a Shell Script:
+
+A shell script is written inline directly into the Dockerfile using a heredoc syntax (<<EOF).
+
+The script (run.sh) is copied into the /app directory inside the container.
+
+The script is given executable permissions (chmod=755).
+
+3. Shell Script Functionality:
+
+The script continuously:
+
+Prints the current time (HH:MM:SS) to the terminal.
+
+Overwrites the previous output (\r ensures the same line is updated).
+
+Pauses for 1 second between updates (sleep 1).
+
+4. Set the Entrypoint:
+
+The container is configured to execute /app/run.sh automatically when it starts.
+
+Purpose:
+
+This Dockerfile creates a container that continuously displays the current time in real-time. It demonstrates how to create a minimal, self-contained application using a simple base image like busybox.
+
 💡 *Main.yml*
 ```
 #
