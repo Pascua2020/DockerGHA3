@@ -205,7 +205,7 @@ Pauses for 1 second between updates (sleep 1).
 
 The container is configured to execute /app/run.sh automatically when it starts.
 
-🔷️ Purpose:
+🔑 Purpose:
 
 This Dockerfile creates a container that continuously displays the current time in real-time. It demonstrates how to create a minimal, self-contained application using a simple base image like busybox.
 
