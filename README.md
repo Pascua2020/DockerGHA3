@@ -122,7 +122,7 @@ Script que automatiza el proceso de despliegue de la aplicación en un servidor 
 
 ## 3️⃣🟨 **Instalación**
 
- 🖱 *Requisitos*
+#### 🖱 *Requisitos*
 
 ℹ️ *Docker :* 
 
