@@ -177,7 +177,7 @@ El script recibe permisos de ejecución (chmod=755).
 
 Configura el script run.sh como el punto de entrada del contenedor, lo que significa que se ejecutará automáticamente cuando se inicie el contenedor.
 
-🔑 Función :
+### 🔑 Función :
 
 El contenedor muestra la hora actual en tiempo real, actualizándola cada segundo en la misma línea de la terminal.
 
@@ -268,7 +268,7 @@ Utiliza la acción docker/metadata-action para extraer las etiquetas y etiquetas
 
 Utiliza la acción docker/build-push-action para construir la imagen Docker con el Dockerfile del repositorio y subirla al registro de contenedores de GitHub. Las etiquetas y las etiquetas adicionales se aplican a la imagen.
 
-🔑 Propósito :
+### 🔑 Propósito :
 
 Automatizar la construcción y publicación de una imagen Docker en GitHub Container Registry cuando se actualiza la rama main, usando el archivo Dockerfile del repositorio.
 
