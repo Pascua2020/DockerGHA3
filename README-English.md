@@ -325,7 +325,7 @@ Tag the image with metadata from the meta step.
 
 Push the built image to the GitHub Container Registry (ghcr.io).
 
-Purpose:
+🔑 Purpose:
 
 This workflow automates the process of creating and publishing a Docker image whenever changes are pushed to the main branch. The published image is uploaded to GitHub Packages, where it can be accessed by other users or workflows.
 
