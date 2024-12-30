@@ -60,7 +60,7 @@ Plataforma de despliegue similar a Heroku que usa contenedores Docker para gesti
 
 - Configuran el script run.sh como el punto de entrada del contenedor.
 
-#### ⚙️ *Main.yml - Diferencias generales*:
+#### ⚙️ *Main.yml - Diferencias generales :*
 
 *🔷️ 1. Repositorios :*
 
